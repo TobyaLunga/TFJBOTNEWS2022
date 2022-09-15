@@ -1,7 +1,8 @@
 const Discord = require("discord.js");
-const client = new Discord.Client({  intents: 98303});
+const client = new Discord.Client({  intents: 9830
+                                   3});
 
-client.login("MTAxNzY2MTY2MzUwOTQ3OTQzNA.GLtbDr.o5Whv7HP_avHaFeakROxQ5IlIo_rEUJ6iw--xg")
+client.login("MINE")
 
 client.once("ready", () => {
     client.channels.cache.get("1017661054840483940").send("**IL BOT è ONLINE!**")
@@ -10,9 +11,8 @@ console.log("IL BOT è ONLINE!")
 
 
 
-const { createCanvas, loadImage, registerFont } = require("canvas");
-registerFont("./font/roboto.ttf", { family: "roboto" })
-registerFont("./font/robotoBold.ttf", { family: "robotoBold" })
+const { createCanvas, loadImage, regi
+       ", { family: "robotoBold" })
 
 client.on("guildMemberAdd", async member => {
     //Creare un canvas
@@ -30,10 +30,13 @@ client.on("guildMemberAdd", async member => {
 
     //Caricare un immagine rotonda
     ctx.save()
-    ctx.beginPath()
-    ctx.arc(150 + 300 / 2, canvas.height / 2, 150, 0, 2 * Math.PI, false) //arc(centroX, centroY, raggio, startAngolo, endAngolo, sensoOrario/Antiorario)
+    ctx.beg
+inPath()
+    ctx.arc(
+        150 + 300 / 2, canvas.height / 2, 150, 0, 2 * Math.PI, false) //arc(centroX, centroY, raggio, startAngolo, endAngolo, sensoOrario/Antiorario)
     ctx.clip()
-    img = await loadImage(member.displayAvatarURL({ format: "png" }))
+    img = await loadImage(me
+                          mber.displayAvatarURL({ format: "png" }))
     ctx.drawImage(img, 150, canvas.height / 2 - 300 / 2, 300, 300)
     ctx.restore()
 
@@ -67,16 +70,19 @@ client.on("guildMemberAdd", async member => {
 
 
 
+
 client.on("messageCreate", message => {
     //Comando eseguibile solo in canali specificati
-    if (message.content == "^ccccccconfizsdfe") {
+    if (message.content == "^c
+        cccccconfizsdfe") {
         if (!["1017728132591136779", "1017554889301299240"].includes(message.channel.id)) { //È possibile inserire tutti i canali che si vogliono
            return message.channel.send("Non puoi eseguire questo comando in questo canale");
         }
 
     
         client.on('messageCreate', (message) => {
-            if (message.content == '^time') {
+            if (me
+                ssage.content == '^time') {
                 var data = new Date();
                 var ora = data.getHours();
                 var minuto = data.getMinutes();
@@ -121,17 +127,30 @@ client.on("messageCreate", message => {
         client.on("messageCreate", message => {
             if (message.content == "^serverinfo") {
                 let server = message.guild;
-                let embed = new Discord.MessageEmbed()
+                let embed = new D
+                
+                
+                
+                scord.MessageEmbed()
                     .setTitle(server.name)
                     .setDescription("Tutte le info su questo server")
-                    .setThumbnail(server.iconURL())
-                    .addField("Owner", client.users.cache.get(server.ownerId).username, true)
-                    .addField("Server id", server.id, true)
+                    .setThumbna
+                
+                wner", client.users.cache.get(server.ownerId
+                ).username, true)
+                    .addField("Server id", 
+                              erver.id, true)
                     .addField("Members", server.memberCount.toString())
-                    .addField("Channels", server.channels.cache.size.toString())
-                    .addField("Server created", server.createdAt.toDateString(), true)
-                    .addField("Boost level", "Level " + (server.premiumTier != "NONE" ? server.premiumTier : 0) + " (Boost: " + server.premiumSubscriptionCount + ")", true)
-                message.channel.send({ embeds: [embed] })
+                    .addField("Channels", server.chann
+                              r.createdAt.toDateString(), true)
+                    .addField("Boost level
+                         
+                         
+                              
+                              ", "Level " + (
+                    server.premiumTier != "NONE" ? server.premiumTier : 0) + " (Boost: " + server.premiumSubscriptionCount + ")", true)
+                message.channel.s
+                end({ embeds: [embed] })
             }
         })
         
@@ -155,13 +174,19 @@ client.on("messageCreate", message => {
         
         
         client.on("messageCreate", message => {
-            if (message.content == "^help") {
+            if (message.content == 
+                "^help") {
                 const embed = new Discord.MessageEmbed()
                     .setTitle("**COMANDI HELP**") //Titolo
                     .setColor("#34a42d") // Colore principale
-                    .setDescription("Questi sono tutti i comandi di **help** \n**COMANDI INFO**: ^userinfo  ^roleinfo \n**COMANDI SOCIAL**: ^lastvideo ^twitch ^youtube ^embube ^embtwitch ^tw ^yt \n**COMANDI FUN**: ^time ") //Descrizione
+                    .setDescription
+                uesti sono tutti i comandi di **help** \n**COMANDI INFO**: ^userinfo  ^roleinfo \n**COMANDI SOCIAL**: ^lastvideo ^twitch ^youtube ^embube ^embtwitch ^tw ^yt \n**COMANDI FUN**: ^time ") //Descrizione
                     //Aggiungere elementi
-                    .setFooter({text: "BY wherestobys"}) // Testo piccolino in fondo
+
+                
+                
+                
+                                    text: "BY wherestobys"}) // Testo piccolino in fondo
                     .setTimestamp() //Se mettere o no l'orario di arrivo del messaggio
                 message.channel.send({embeds: [embed]})
             }
@@ -202,7 +227,11 @@ client.on("messageCreate", message => {
         
                         if (!giaMandato) {
                             client.channels.cache.get("1017728828052877322").send(`-- NUOVO VIDEO --
-        Ciao, è appena uscito un video su **${response.items[0].author}**
+        Ciao, è appena uscito un video
+        
+        
+        
+        **${response.items[0].author}**
         Andate a vedere "${response.items[0].title}"
         https://www.youtu.be/${idVideo}`) //Importate non levare l'id del video
                         }
